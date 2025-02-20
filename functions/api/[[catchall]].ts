@@ -13,7 +13,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     "requestUrl",
     context.request.url
   );
-  const relPath = new URL(context.request.url).pathname;
+  const relPath = new URL(context.request.url).pathname.replace("/api", "");
   const url = new URL(targetUrl + relPath);
   console.log("resultingUrl", url);
 
